@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1EHZGJ27V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y1EHZGJ27V');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Manage Tasks, Boost Productivity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="./style.css">
+
+
+</head>
+<body>
+   
+ <nav class="navbar">
+    <div class="nav-content">
+
+        <!-- Logo -->
+        <div class="logo">
+            <i class="fas fa-check-double"></i>
+            <span>TaskMaster</span>
+        </div>
+
+        <!-- Links -->
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Dashboard</a></li>
+            <li><a href="tasks.html">Tasks</a></li>
+            <li><a href="#Progress">Progress</a></li>
+           
+        </ul>
+
+        <!-- Auth Icon -->
+        <div class="auth-icon">
+            <a href="signup.html" title="signup / Register">
+                <i class="fas fa-user-circle"></i>
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="main-content">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title"><i class="fas fa-bullseye"></i> Today's Focus</h3>
+                    <p>Complete 5 priority tasks and use Pomodoro timer for 3 focused sessions.</p>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title"><i class="fas fa-list"></i> Categories</h3>
+                    <div class="category-list">
+                        <div class="category-item">
+                            <div class="category-dot" style="background-color: #4a6fa5;"></div>
+                            <span class="category-name">Work</span>
+                            <span class="category-count">5</span>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-dot" style="background-color: #4fc3a1;"></div>
+                            <span class="category-name">Personal</span>
+                            <span class="category-count">3</span>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-dot" style="background-color: #f39c12;"></div>
+                            <span class="category-name">Health</span>
+                            <span class="category-count">2</span>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-dot" style="background-color: #e74c3c;"></div>
+                            <span class="category-name">Urgent</span>
+                            <span class="category-count">1</span>
+                        </div>
+                        <div class="category-item">
+                            <div class="category-dot" style="background-color: #9b59b6;"></div>
+                            <span class="category-name">Learning</span>
+                            <span class="category-count">4</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title"><i class="fas fa-chart-line"></i> Productivity Tip</h3>
+                    <p>Break large tasks into smaller, manageable steps. Complete 3-5 pomodoro sessions for complex projects.</p>
+                </div>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="content-area">
+                <!-- Dashboard Stats -->
+                <section class="dashboard-cards">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon icon-tasks">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <span class="card-label">Today</span>
+                        </div>
+                        <div class="card-value" id="todayTasks">8</div>
+                        <div class="card-label">Tasks Remaining</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon icon-completed">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <span class="card-label">This Week</span>
+                        </div>
+                        <div class="card-value" id="completedTasks">24</div>
+                        <div class="card-label">Tasks Completed</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon icon-time">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <span class="card-label">Focus Time</span>
+                        </div>
+                        <div class="card-value" id="focusTime">3.5</div>
+                        <div class="card-label">Hours Today</div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-icon icon-productivity">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <span class="card-label">Productivity</span>
+                        </div>
+                        <div class="card-value" id="productivityScore">87%</div>
+                        <div class="card-label">Weekly Score</div>
+                    </div>
+                </section>
+
+                <!-- Task List -->
+                <section class="task-list-container">
+                    <div class="section-header">
+                        <h2 class="section-title">Today's Tasks</h2>
+                        <div class="task-filters">
+                            <button class="filter-btn active" data-filter="all">All</button>
+                            <button class="filter-btn" data-filter="high">High Priority</button>
+                            <button class="filter-btn" data-filter="medium">Medium</button>
+                            <button class="filter-btn" data-filter="low">Low</button>
+                        </div>
+                    </div>
+                    
+                    <div class="task-list" id="taskList">
+                        <!-- Tasks will be populated by JavaScript -->
+                    </div>
+                </section>
+
+                <!-- Add Task Form -->
+                <section class="add-task-form">
+                    <h2 class="section-title">Add New Task</h2>
+                    <form id="taskForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="taskTitle">Task Title</label>
+                                <input type="text" id="taskTitle" class="form-control" placeholder="What needs to be done?" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskCategory">Category</label>
+                                <select id="taskCategory" class="form-control">
+                                    <option value="work">Work</option>
+                                    <option value="personal">Personal</option>
+                                    <option value="health">Health</option>
+                                    <option value="learning">Learning</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="taskPriority">Priority</label>
+                                <select id="taskPriority" class="form-control">
+                                    <option value="low">Low</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="high">High</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="taskTime">Estimated Time (hours)</label>
+                                <input type="number" id="taskTime" class="form-control" min="0.5" max="8" step="0.5" value="1">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Add Task</button>
+                    </form>
+                </section>
+
+                <!-- Pomodoro Timer -->
+                <section class="pomodoro-container" id="Timer">
+                    <h2 class="section-title">Focus Timer (Pomodoro)</h2>
+                    <div class="timer-display" id="timerDisplay">25:00</div>
+                    <div class="timer-controls">
+                        <button class="timer-btn timer-btn-start" id="startTimer">Start</button>
+                        <button class="timer-btn timer-btn-pause" id="pauseTimer">Pause</button>
+                        <button class="timer-btn timer-btn-reset" id="resetTimer">Reset</button>
+                    </div>
+                    <div class="timer-modes">
+                        <button class="timer-mode active" data-time="25">Pomodoro (25 min)</button>
+                        <button class="timer-mode" data-time="5">Short Break (5 min)</button>
+                        <button class="timer-mode" data-time="15">Long Break (15 min)</button>
+                    </div>
+                </section>
+
+                <!-- Progress Chart -->
+                <section class="progress-container" id="Progress">
+                    <h2 class="section-title">Weekly Progress</h2>
+                    <div class="progress-chart" id="progressChart">
+                        <!-- Chart bars will be populated by JavaScript -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+   <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="index.html" class="logo">
+                   
+            <i class="fas fa-check-double"></i>
+                    <span>TaskMaster</span>
+                </a>
+                <p>Boost your productivity, organize your tasks, and achieve more in less time with our smart task management system.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="social-link" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="social-link" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="tasks.html"><i class="fas fa-tasks"></i> Tasks</a></li>
+                        <li><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-list-check"></i> Task Management</a></li>
+                        <li><a href="#Progress"><i class="fas fa-chart-pie"></i> Progress Tracking</a></li>
+                        <li><a href="#Timer"><i class="fas fa-hourglass-half"></i> Pomodoro Timer</a></li>
+                        <li><a href="#"><i class="fas fa-bell"></i> Smart Reminders</a></li>
+                        <li><a href="#"><i class="fas fa-mobile-alt"></i> Mobile Friendly</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact Us</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Productivity St, Cairo, Egypt</p>
+                        <p><i class="fas fa-phone"></i> +20 123 456 7890</p>
+                        <p><i class="fas fa-envelope"></i> support@taskmaster.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2023 TaskMaster. All rights reserved.</p>
+            <div class="footer-links-bottom">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>

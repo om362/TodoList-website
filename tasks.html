@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1EHZGJ27V"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-Y1EHZGJ27V');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - My Tasks</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="tasks.css">
+
+
+</head>
+<body class="tasks-page">
+    <!-- Main Navigation -->
+    
+ <nav class="navbar">
+    <div class="nav-content">
+
+        <!-- Logo -->
+        <div class="logo">
+            <i class="fas fa-check-double"></i>
+            <span>TaskFlow</span>
+        </div>
+
+        <!-- Links -->
+        <ul class="nav-links">
+             <li><a href="index.html" >Dashboard</a></li>
+            <li><a href="tasks.html" class="active">Tasks</a></li>
+            <li><a href="index.html #Progress">Progress</a></li>
+           
+        </ul>
+
+        <!-- Auth Icon -->
+        <div class="auth-icon">
+            <a href="signup.html" title="signup / Register">
+                <i class="fas fa-user-circle"></i>
+            </a>
+        </div>
+
+    </div>
+</nav>
+
+    <!-- Main Content -->
+    <main class="container tasks-container">
+        <div class="tasks-header">
+            <h1>My Tasks</h1>
+            <p>Manage your daily tasks and stay productive</p>
+        </div>
+
+        <!-- Task Filters -->
+        <div class="task-filters">
+            <div class="filter-group">
+                <label for="filterCategory">Category</label>
+                <select id="filterCategory" class="filter-select">
+                    <option value="all">All Categories</option>
+                    <option value="work">Work</option>
+                    <option value="personal">Personal</option>
+                    <option value="health">Health</option>
+                    <option value="learning">Learning</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="filterPriority">Priority</label>
+                <select id="filterPriority" class="filter-select">
+                    <option value="all">All Priorities</option>
+                    <option value="high">High Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="low">Low Priority</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="filterStatus">Status</label>
+                <select id="filterStatus" class="filter-select">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+            
+            <div class="filter-actions">
+                <button id="clearFilters" class="btn btn-secondary">
+                    <i class="fas fa-ban"></i> Clear Filters
+                </button>
+            </div>
+        </div>
+
+        <!-- Tasks List -->
+        <div id="tasksList">
+            <!-- Tasks will be loaded here by JavaScript -->
+        </div>
+
+        <!-- Empty State (initially hidden) -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-icon">
+                <i class="fas fa-tasks"></i>
+            </div>
+            <h3>No tasks yet</h3>
+            <p>You don't have any tasks. Start by adding your first task below!</p>
+            <button id="addFirstTask" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add Your First Task
+            </button>
+        </div>
+
+        
+           
+    </main>
+<script src="tasks.js"></script>
+</body>
+</html>
